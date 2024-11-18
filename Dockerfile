@@ -10,7 +10,7 @@ ENV VITE_APP_API_ENDPOINT_URL="https://api.themoviedb.org/3"
 RUN yarn build
 
 FROM httpd:alpine
-WORKDIR /var/www/html/
+WORKDIR /usr/local/apache2/htdocs/
 RUN rm -rf ./*
 COPY --from=builder /app/dist .
 EXPOSE 80
